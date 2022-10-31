@@ -27,17 +27,35 @@
 // };
 // console.log(person.role);
 // UNION TYPE
-var combine = function (input1, input2) {
-    if (typeof input1 === 'number' && typeof input2 === 'number') {
-        var result = input1 + input2;
-        return result;
+// const combine = (input1: number | string, input2: number | string) => {
+//   if (typeof input1 === 'number' && typeof input2 === 'number') {
+//     const result = input1 + input2;
+//     return result;
+//   } else {
+//     const result = input1.toString() + input2.toString();
+//     return result;
+//   }
+// };
+// const combinedAges = combine(30, 50);
+// console.log(combinedAges);
+// const combinedNames = combine("Max", "Anna");
+// console.log(combinedNames);
+// LITERALS:
+var combine = function (input1, input2, resultConversion) {
+    var result;
+    if (typeof input1 === "number" && typeof input2 === "number" || resultConversion === "as-number") {
+        var result_1 = +input1 + +input2;
+        return result_1;
     }
     else {
-        var result = input1.toString() + input2.toString();
-        return result;
+        var result_2 = input1.toString() + input2.toString();
+        return result_2;
     }
+    return result;
 };
-var combinedAges = combine(30, 50);
-console.log(combinedAges);
-var combinedNames = combine("Max", "Anna");
+var combinedAges1 = combine(30, 50, "as-string");
+console.log(combinedAges1);
+var combinedAges2 = combine("30", "60", "as-number");
+console.log(combinedAges2);
+var combinedNames = combine("Max", "Anna", "as-string");
 console.log(combinedNames);
