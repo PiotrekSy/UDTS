@@ -21,24 +21,41 @@
 
 // console.log(add(4));
 
-const hobbies = ["Sports", "Cooking"];
-console.log([...hobbies]);
-console.log(...hobbies);
+// const hobbies = ["Sports", "Cooking"];
+// console.log([...hobbies]);
+// console.log(...hobbies);
 
-const activeHobbies = ["Hiking"];
-console.log(activeHobbies);
+// const activeHobbies = ["Hiking"];
+// console.log(activeHobbies);
 
-activeHobbies.push(...hobbies);
-console.log(activeHobbies);
+// activeHobbies.push(...hobbies);
+// console.log(activeHobbies);
 
-const person: {
-  name: string;
-  age: number;
-} = {
-  name: "Piotr",
+const person = {
+  firstName: "Piotr",
   age: 34,
 };
 console.log(person);
 
 const copiedPerson = { ...person };
 console.log(copiedPerson);
+
+const add = (...numbers: number[]): string => {
+  const result = numbers.reduce((acc, ele) => acc + ele);
+  return result.toString();
+};
+
+const addedNumbers = add(4, 5, 6, 7, 8, 8, 8);
+console.log(addedNumbers);
+
+// const hobby1 = hobbies[0];
+// const hobby2 = hobbies[1];
+
+// const [hobby1, hobby2] = hobbies;
+// console.log(hobbies, hobby1, hobby2);
+
+const { firstName: userName, age } = person;
+
+console.log(person.firstName);
+
+console.log(person.age);
